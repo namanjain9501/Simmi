@@ -1,3 +1,4 @@
+{% if user.is_authenticated %}
 {% extends 'base.html' %}
 {% block content %}
 
@@ -17,6 +18,7 @@
           <center>
           <h4>{{ request.user.first_name }} {{ request.user.last_name }}</h4>
           <h6>Username- {{ request.user }}</h6>
+          <h6>{{ request.user.image }}</h6>
           </center>
         </div>
           <div class="card-body bg-light">
@@ -38,3 +40,4 @@
 
 
 {% endblock %}
+{% endif %}

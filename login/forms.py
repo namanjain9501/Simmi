@@ -1,3 +1,4 @@
+from email.mime import image
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
 from django import forms
@@ -37,6 +38,17 @@ class SignUpForm(UserCreationForm):
         "placeholder": "Enter Email-id"
     }))
 
+    image = forms.FileField(
+        widget= forms.FileInput(
+            attrs={
+                "class": "form-control",
+                "type": "file",
+                
+
+            }
+        )
+    )
+
     password1 = forms.CharField(widget=forms.TextInput(attrs={
         "class": "form-control",
         "type": "password",
@@ -61,6 +73,8 @@ class SignUpForm(UserCreationForm):
             }
         )
     )
+
+    
 
     class Meta:
         model = User
