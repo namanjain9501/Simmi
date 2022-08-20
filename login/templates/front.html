@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="container"><div class=" text-center mt-5 ">
+  <h1>Welcome</h1>
+</div>
+
+
+
+
+<div class="row ">
+  <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-header">
+          <center>
+          <h4>{{ request.user.first_name }} {{ request.user.last_name }}</h4>
+          <h6>Username- {{ request.user }}</h6>
+          </center>
+        </div>
+          <div class="card-body bg-light">
+              <div class="container">
+                <h6 class="card-title">email {{ request.user.email }}</h6>
+                <p class="card-text">{{ request.user.desc }}</p>
+                <a href= "{% url 'logout' %}" class="btn  btn-outline-success btn-send pt-1 btn-block">Logout</a>
+                
+              </div>
+            </div>
+        </div> <!-- /.8 -->
+
+     
+    </div> <!-- /.row-->
+  
+</div>
+</br>
+
+
+
+{% endblock %}
